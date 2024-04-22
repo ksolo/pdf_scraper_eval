@@ -17,7 +17,7 @@ for scraper in "$SCRAPERS_DIR"/*; do
 
         # Run the Docker container, appending '-container' to the name
         echo "Running Docker container for $scraper_name"
-        docker run -v "${PWD}/output:/output" "${lower_scraper_name}"
+        docker run --rm -v "${PWD}/output:/output" "${lower_scraper_name}"
     fi
 done
 
